@@ -1,8 +1,9 @@
-let users;
-let customersData;
-let sellersData;
-let productsData;
+let users = [];
+let customersData = [];
+let sellersData = [];
+let productsData = [];
 
+//! Fetching Data
 fetch("/javascript/db.json")
   .then((response) => response.json())
   .then((data) => {
@@ -19,15 +20,18 @@ function processData(data) {
   productsData = data.products;
   users = [...customersData, ...sellersData];
 }
+
 //! Get A user from the users
 export function getUser(username) {
   return users.find((user) => user.username === username);
 }
+
 //! Get A product from the products
 export function getProduct(productname) {
   return productsData.find((product) => product.name === productname);
 }
-//! Add a new product to the products
+
+//! Add a new Product to the Products
 export function addProduct(product, sellerUser) {
   const seller = getUser(sellerUser);
   const newProduct = {
@@ -39,46 +43,82 @@ export function addProduct(product, sellerUser) {
     image: product.image,
   };
   productsData.push(newProduct);
+  saveDataToDB();
 }
+
 //! Remove existing product
 export function removeProduct(productname) {
-  const product = productsData.find((product) => product.name === productname);
-  const index = productsData.indexOf(product);
-  productsData.splice(index, 1);
+  const productIndex = productsData.findIndex(
+    (product) => product.name === productname
+  );
+  productsData.splice(productIndex, 1);
+  saveDataToDB();
 }
+
 //! Reduce the quantity of a product
-export function reduceQuntatiy(productname, quntatiy) {
+export function reduceQuantity(productname, quantity) {
   const product = productsData.find((product) => product.name === productname);
-  const index = productsData.indexOf(product);
-  productsData[index].quantity = product.quantity - quntatiy;
+  if (product) {
+    product.quantity -= quantity;
+    saveDataToDB();
+  }
 }
+
 //! Increase the quantity of a product
-export function increaseQuntatiy(productname, quntatiy) {
+export function increaseQuantity(productname, quantity) {
   const product = productsData.find((product) => product.name === productname);
-  const index = productsData.indexOf(product);
-  productsData[index].quantity = product.quantity + quntatiy;
+  if (product) {
+    product.quantity += quantity;
+    saveDataToDB();
+  }
 }
+
 //! Remove a user from the users
-export function removeUser(user) {
-  const index = users.indexOf(user);
-  users.splice(index, 1);
+export function removeUser(username) {
+  const userIndex = users.findIndex((user) => user.username === username);
+  if (userIndex !== -1) {
+    users.splice(userIndex, 1);
+    saveDataToDB();
+  }
 }
+
 //! Add a user to the users list
 export function addUser(user) {
   users.push(user);
+  saveDataToDB();
 }
+
 //! Login validation
 export function login(username, password) {
-  const user = users.find(
+  return users.find(
     (user) => user.username === username && user.password === password
   );
-  if (user) {
-    return user;
-  } else {
-    return null;
-  }
 }
-//! Get sellers users from the database
-export function getSeller() {
+
+//! Get the Sellers
+export function getSellers() {
   return sellersData;
+}
+
+//! Save Data
+function saveDataToDB() {
+  const data = {
+    customers: customersData,
+    sellers: sellersData,
+    products: productsData,
+  };
+  fetch("/update", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      console.log("Data saved successfully:", result);
+    })
+    .catch((error) => {
+      console.error("Error saving data:", error);
+    });
 }
