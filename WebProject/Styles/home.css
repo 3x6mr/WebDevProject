@@ -1,0 +1,159 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  color: white;
+  font-family: "Chubbo", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Erode", serif;
+}
+
+/* START HEAD  */
+
+header {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 1) 44%,
+    rgba(112, 0, 0, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1rem 2rem;
+  margin-bottom: 3rem;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+    margin-bottom: 3rem;
+    .logo {
+      font-style: italic;
+      font-size: 2em;
+    }
+    .menu {
+      /* border: 1px solid pink; */
+
+      .links {
+        display: none;
+        ul {
+          position: absolute;
+          background: rgb(139, 4, 4);
+          top: 100px;
+          right: 50%;
+          transform: translateX(50%);
+          width: 100%;
+          border: 1px solid rgb(0, 0, 0);
+
+          li {
+            padding: 1rem 1rem;
+            text-align: center;
+            &:not(:last-child) {
+              border-bottom: 1px solid rgb(0, 0, 0);
+            }
+            &.user {
+              display: flex;
+              display: none;
+              /* flex-direction: column; */
+              gap: 2rem;
+              align-items: center;
+              justify-content: center;
+            }
+
+            a {
+              font-size: 1rem;
+              transition: all ease-in-out 0.2s;
+              &:hover {
+                color: rgb(0, 0, 0);
+              }
+            }
+            &.logout {
+              display: none;
+            }
+            &.login {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    svg {
+      cursor: pointer;
+      &:active + .links {
+        display: block;
+      }
+    }
+  }
+  .text {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+    p {
+      line-height: 1.5;
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all ease-in-out 0.2s;
+      font-family: "Erode", serif;
+      /* border-radius: 7px; */
+    }
+    .explore {
+      background: transparent;
+      color: white;
+      border: 1px solid white;
+      &:hover {
+        background: white;
+        color: rgb(0, 0, 0);
+      }
+    }
+    .contact {
+      background: white;
+      border: 1px solid transparent;
+      color: rgb(0, 0, 0);
+      &:hover {
+        border: 1px solid white;
+        background: transparent;
+        color: white;
+      }
+    }
+  }
+}
+/* END HEADER  */
+
+/* START MAIN  */
+main {
+  color: black;
+  section {
+    text-align: center;
+  }
+}
+/* END MAIN  */

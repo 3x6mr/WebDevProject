@@ -1,0 +1,92 @@
+{
+  "customers": [
+    {
+      "username": "customer1",
+      "password": "password1",
+      "email": "customer1@example.com",
+      "balance": 1000
+    },
+    {
+      "username": "customer2",
+      "password": "password2",
+      "email": "customer2@example.com",
+      "balance": 2000
+    }
+  ],
+  "sellers": [
+    {
+      "username": "seller1",
+      "password": "password1",
+      "email": "seller1@example.com",
+      "bank": 1000
+    },
+    {
+      "username": "seller2",
+      "password": "password2",
+      "email": "seller2@example.com",
+      "bank": 2000
+    },
+    {
+      "username": "seller3",
+      "password": "password3",
+      "email": "seller3@example.com",
+      "bank": 3000
+    }
+  ],
+  "products": [
+    {
+      "name": "Bicycle 1",
+      "owner": "seller1",
+      "description": "Description for Bicycle 1",
+      "img": "bicycle1.jpg",
+      "price": 500,
+      "quantity": 10,
+      "section": "section1"
+    },
+    {
+      "name": "Bicycle 2",
+      "owner": "seller2",
+      "description": "Description for Bicycle 2",
+      "img": "bicycle2.jpg",
+      "price": 600,
+      "quantity": 5,
+      "section": "section2"
+    },
+    {
+      "name": "Bicycle 3",
+      "owner": "seller3",
+      "description": "Description for Bicycle 3",
+      "img": "bicycle3.jpg",
+      "price": 500,
+      "quantity": 30,
+      "section": "section3"
+    },
+    {
+      "name": "Bicycle 4",
+      "owner": "seller1",
+      "description": "Description for Bicycle 4",
+      "img": "bicycle1.jpg",
+      "price": 500,
+      "quantity": 6,
+      "section": "section2"
+    },
+    {
+      "name": "Bicycle 5",
+      "owner": "seller3",
+      "description": "Description for Bicycle 5",
+      "img": "bicycle1.jpg",
+      "price": 500,
+      "quantity": 3,
+      "section": "section1"
+    },
+    {
+      "name": "Bicycle 6",
+      "owner": "seller3",
+      "description": "Description for Bicycle 5",
+      "img": "bicycle1.jpg",
+      "price": 500,
+      "quantity": 4,
+      "section": "section1"
+    }
+  ]
+}

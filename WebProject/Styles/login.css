@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* padding: 5rem 2rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Chubbo", sans-serif;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 1) 44%,
+    rgba(112, 0, 0, 1) 100%
+  );
+}
+.login-container {
+  box-shadow: 0 0 10px 4px rgb(206, 65, 65);
+  padding: 2rem;
+  background: white;
+}
+.login-container .login-header {
+  margin-bottom: 3rem;
+  text-align: center;
+  color: rgb(204, 18, 18);
+}
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.login-container form input {
+  padding: 5px;
+  font-family: "Chubbo", sans-serif;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(204, 18, 18);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: rgb(204, 18, 18);
+  transition: all 0.3s ease;
+  &:focus {
+    border-bottom: 2px solid rgb(204, 18, 18);
+  }
+}
+.login-container form button {
+  padding: 5px;
+  font-weight: bold;
+  font-family: "Chubbo", sans-serif;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+  background: rgb(204, 18, 18);
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  &:hover {
+    background: rgb(255, 0, 0);
+    color: rgb(204, 18, 18);
+    box-shadow: 0 0 6px 2px rgb(155, 11, 11);
+  }
+}
