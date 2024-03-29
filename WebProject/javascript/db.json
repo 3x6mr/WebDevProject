@@ -35,6 +35,7 @@
   ],
   "products": [
     {
+      "id": 1,
       "name": "Bicycle 1",
       "owner": "seller1",
       "description": "Description for Bicycle 1",
@@ -44,6 +45,7 @@
       "section": "section1"
     },
     {
+      "id": 2,
       "name": "Bicycle 2",
       "owner": "seller2",
       "description": "Description for Bicycle 2",
@@ -53,6 +55,7 @@
       "section": "section2"
     },
     {
+      "id": 3,
       "name": "Bicycle 3",
       "owner": "seller3",
       "description": "Description for Bicycle 3",
@@ -62,6 +65,7 @@
       "section": "section3"
     },
     {
+      "id": 4,
       "name": "Bicycle 4",
       "owner": "seller1",
       "description": "Description for Bicycle 4",
@@ -71,6 +75,7 @@
       "section": "section2"
     },
     {
+      "id": 5,
       "name": "Bicycle 5",
       "owner": "seller3",
       "description": "Description for Bicycle 5",
@@ -80,6 +85,7 @@
       "section": "section1"
     },
     {
+      "id": 6,
       "name": "Bicycle 6",
       "owner": "seller3",
       "description": "Description for Bicycle 5",
