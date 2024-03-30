@@ -19,6 +19,37 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("isLoggedIn", false);
     window.location.reload();
   });
+
+  const mountain = document.querySelector(".mountain");
+  const speed = document.querySelector(".speed");
+  const classic = document.querySelector(".classic");
+
+  mountain.addEventListener("click", function (e) {
+    if (!isLoggedIn) {
+      window.location.href = "../Pages/login.html";
+    } else {
+      localStorage.setItem("section", "mountain");
+      window.location.href = "../Pages/products.html";
+    }
+  });
+  speed.addEventListener("click", function (e) {
+    if (!isLoggedIn) {
+      window.location.href = "../Pages/login.html";
+    } else {
+      localStorage.setItem("section", "speed");
+      window.location.href = "../Pages/products.html";
+    }
+    console.log("speed clicked");
+  });
+  classic.addEventListener("click", function (e) {
+    if (!isLoggedIn) {
+      window.location.href = "../Pages/login.html";
+    } else {
+      localStorage.setItem("section", "classic");
+      window.location.href = "../Pages/products.html";
+    }
+    console.log("classic clicked");
+  });
 });
 
 var menu = document.querySelector(".menu-icon");

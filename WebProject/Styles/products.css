@@ -1,0 +1,108 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  color: white;
+  font-family: "Chubbo", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Erode", serif;
+}
+
+/* START HEAD  */
+
+header {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 1) 44%,
+    rgba(112, 0, 0, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1rem 2rem;
+  margin-bottom: 3rem;
+}
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  #searchInput {
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(164, 20, 20);
+    background: transparent;
+    font-size: 1rem;
+    transition: all ease-in-out 0.2s;
+    color: white;
+    &:focus {
+      border-bottom: 1px solid rgb(255, 0, 0);
+    }
+  }
+  svg {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: rgb(168, 0, 0);
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    font-size: 1rem;
+    &:hover {
+      color: rgb(255, 0, 0);
+    }
+  }
+}
+.gallery {
+  padding: 2rem;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-auto-rows: 300px; */
+    gap: 3rem;
+    margin-bottom: 3rem;
+    .card {
+      cursor: pointer;
+      max-width: 300px;
+      border-radius: 5px;
+      height: auto;
+      padding: 1rem;
+      border-radius: 10px;
+      /* border: 5px solid rgb(140, 140, 140); */
+      background: rgb(244, 244, 244);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      color: black;
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        box-shadow: 0px 0px 10px rgb(0, 0, 0);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .checked {
+    color: orange;
+  }
+}
