@@ -3,6 +3,9 @@
   padding: 0px;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: white;
   font-family: "Chubbo", sans-serif;
@@ -194,5 +197,81 @@ main {
       }
     }
   }
+  #contact {
+    padding: 2rem;
+    color: white;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      160deg,
+      rgba(0, 0, 0, 1) 44%,
+      rgba(112, 0, 0, 1) 100%
+    );
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      color: white;
+      /* padding: 2rem; */
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 50%;
+        input {
+          border: 1px solid white;
+          background: transparent;
+          color: white;
+          padding: 10px;
+          font-family: "Chubbo", sans-serif;
+          outline: none;
+          &:focus {
+            border: 1px solid rgb(255, 0, 0);
+          }
+        }
+        textarea {
+          font-family: "Chubbo", sans-serif;
+          font-size: 0.5rem;
+          padding: 15px;
+          border: 1px solid rgb(255, 255, 255);
+          /* border-radius: 5px; */
+          outline: none;
+          margin-bottom: 1rem;
+          font-size: 1rem;
+          background: transparent;
+          transition: all ease-in-out 0.2s;
+          color: white;
+          &:focus {
+            border: 1px solid rgb(255, 255, 255);
+          }
+        }
+      }
+    }
+    button {
+      padding: 10px 20px;
+      border: 1px solid white;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all ease-in-out 0.2s;
+      font-family: "Erode", serif;
+      /* border-radius: 7px; */
+      background: transparent;
+      color: rgb(255, 255, 255);
+      &:hover {
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+      }
+    }
+  }
 }
+
 /* END MAIN  */
+footer {
+  padding: 2rem;
+  color: white;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 1) 44%,
+    rgba(112, 0, 0, 1) 100%
+  );
+}
