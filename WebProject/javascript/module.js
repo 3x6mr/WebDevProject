@@ -122,3 +122,6 @@ function saveDataToDB() {
       console.error("Error saving data:", error);
     });
 }
+export function getProducts() {
+  return productsData;
+}

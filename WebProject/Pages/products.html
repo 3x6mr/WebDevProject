@@ -13,6 +13,10 @@
       href="https://api.fontshare.com/v2/css?f[]=chubbo@700,701,201,301,400,200,401,300,500,501&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <header>
@@ -22,38 +26,57 @@
           id="searchInput"
           placeholder="Search for a Product"
         />
-        <button onclick="searchItems()" class="explore">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-search"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-            <path d="M21 21l-6 -6" />
-          </svg>
-        </button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-search"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+          <path d="M21 21l-6 -6" />
+        </svg>
       </div>
     </header>
     <div class="gallery">
       <div class="container">
-          <div class="card">
-            <img src="../images/bik4.png" alt="" />
-            <div class="info">
-              <div class="name">Name</div>
-              <div class="price">30$</div>
+        <div class="card">
+          <img src="../images/bik4.png" alt="" />
+          <div class="info">
+            <div class="name">Name: Mountain Bike</div>
+            <div class="price">price: 30$</div>
+            <div class="rate">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../images/bik4.png" alt="" />
+          <div class="info">
+            <div class="name">Name: Mountain Bike</div>
+            <div class="price">price: 30$</div>
+            <div class="rate">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- </div> -->
 
     <!-- END HEADER  -->
     <script type="module" src="../javascript/products.js"></script>

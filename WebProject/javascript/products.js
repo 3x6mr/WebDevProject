@@ -1,21 +1,20 @@
-// function searchItems() {
-//   const searchInput = document
-//     .getElementById("searchInput")
-//     .value.toLowerCase();
-//   fetch("../javascript/db.json")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const filteredItems = data.products.filter((item) =>
-//         item.name.toLowerCase().includes(searchInput)
-//       );
-//       if (filteredItems.length === 0) {
-//         displayNotFoundMessage();
-//       } else {
-//         displayItems(filteredItems);
-//       }
-//     })
-//     .catch((error) => console.error("Error fetching items:", error));
-// }
+import { getProducts } from "./module";
+
+// const searchInput = document.getElementById("searchInput").value.toLowerCase();
+// fetch("../javascript/db.json")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     const filteredItems = data.products.filter((item) =>
+//       item.name.toLowerCase().includes(searchInput)
+//     );
+//     if (filteredItems.length === 0) {
+//       displayNotFoundMessage();
+//     } else {
+//       displayItems(filteredItems);
+//     }
+//   })
+//   .catch((error) => console.error("Error fetching items:", error));
+// document.addEventListener("DOMContentLoad", function () {});
 
 // function displayItems(items) {
 //   const itemsContainer = document.getElementById("itemsContainer");
@@ -40,6 +39,6 @@
 //   const itemsContainer = document.getElementById("itemsContainer");
 //   itemsContainer.innerHTML = "<p>Bike not found</p>";
 // }
-
-// // Initially display all items
-// searchItems();
+const sectionType = localStorage.getItem("section");
+const gallery = document.querySelector(".gallery");
+console.log(sectionType);
