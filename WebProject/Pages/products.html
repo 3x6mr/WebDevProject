@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bicycle</title>
+    <link rel="stylesheet" href="../Styles/products.css" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=erode@400&f[]=tanker@400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=chubbo@700,701,201,301,400,200,401,300,500,501&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="search">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for a Product"
+        />
+        <button onclick="searchItems()" class="explore">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-search"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+            <path d="M21 21l-6 -6" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div class="gallery">
+      <div class="container">
+          <div class="card">
+            <img src="../images/bik4.png" alt="" />
+            <div class="info">
+              <div class="name">Name</div>
+              <div class="price">30$</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- END HEADER  -->
+    <script type="module" src="../javascript/products.js"></script>
+    <script type="module" src="../javascript/module.js"></script>
+  </body>
+</html>
