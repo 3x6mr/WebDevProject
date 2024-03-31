@@ -97,7 +97,7 @@ header {
       background: rgb(244, 244, 244);
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       gap: 1rem;
       color: black;
@@ -109,9 +109,45 @@ header {
         width: 100%;
         /* height: 100%; */
       }
+      /* .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        gap: 1rem;
+      } */
     }
   }
-  .checked {
-    color: orange;
+}
+.found-item {
+  position: absolute;
+  padding: 10px 40%;
+  width: 100%;
+  top: 70px;
+  /* background: rgb(183, 183, 183); */
+
+  .item {
+    width: 100%;
+    background: rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    justify-content: start;
+    gap: 5rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    border-bottom: 1px solid gray;
+    &:hover {
+      background: rgb(218, 218, 218);
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .info {
+      color: black;
+    }
   }
 }
