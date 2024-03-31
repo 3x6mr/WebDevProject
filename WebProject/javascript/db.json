@@ -42,7 +42,7 @@
       "img": "bike1.jpg",
       "price": 500,
       "quantity": 10,
-      "section": "section1"
+      "section": "mountain"
     },
     {
       "id": 2,
@@ -52,7 +52,7 @@
       "img": "bike2.jpg",
       "price": 600,
       "quantity": 5,
-      "section": "section2"
+      "section": "speed"
     },
     {
       "id": 3,
@@ -62,7 +62,7 @@
       "img": "bike3.jpg",
       "price": 500,
       "quantity": 30,
-      "section": "section3"
+      "section": "classic"
     },
     {
       "id": 4,
@@ -72,7 +72,7 @@
       "img": "bike4.jpg",
       "price": 500,
       "quantity": 6,
-      "section": "section2"
+      "section": "speed"
     },
     {
       "id": 5,
@@ -82,7 +82,7 @@
       "img": "bike5.jpg",
       "price": 500,
       "quantity": 3,
-      "section": "section1"
+      "section": "mountain"
     },
     {
       "id": 6,
@@ -92,7 +92,7 @@
       "img": "bike6.jpg",
       "price": 500,
       "quantity": 4,
-      "section": "section1"
+      "section": "classic"
     }
   ]
 }

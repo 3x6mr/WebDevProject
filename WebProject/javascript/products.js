@@ -1,4 +1,23 @@
-import { getProducts } from "./module";
+import { getProducts } from "./module.js";
+const sectionType = localStorage.getItem("section");
+const container = document.querySelector(".container");
+const products = getProducts();
+products
+  .filter((product) => {
+    return product.section === sectionType;
+  })
+  .forEach(function (product) {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+    <img src="../images/${product.img}" alt="${product.name}">
+        <div class="info">
+            <div class="name">Name: ${product.name}</div>
+            <div class="price">price: ${product.price}$</div>
+        </div>
+        `;
+    container.appendChild(card);
+  });
 
 // const searchInput = document.getElementById("searchInput").value.toLowerCase();
 // fetch("../javascript/db.json")
@@ -39,6 +58,3 @@ import { getProducts } from "./module";
 //   const itemsContainer = document.getElementById("itemsContainer");
 //   itemsContainer.innerHTML = "<p>Bike not found</p>";
 // }
-const sectionType = localStorage.getItem("section");
-const gallery = document.querySelector(".gallery");
-console.log(sectionType);

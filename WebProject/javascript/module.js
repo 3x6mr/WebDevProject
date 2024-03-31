@@ -4,10 +4,12 @@ let sellersData = [];
 let productsData = [];
 
 //! Fetching Data
-fetch("/javascript/db.json")
+fetch("../javascript/db.json")
   .then((response) => response.json())
   .then((data) => {
     processData(data);
+    // Call other functions that depend on the data
+    initializeApp();
   })
   .catch((error) => {
     console.error("Error fetching data:", error);
@@ -19,6 +21,11 @@ function processData(data) {
   sellersData = data.sellers;
   productsData = data.products;
   users = [...customersData, ...sellersData];
+}
+function initializeApp() {
+  console.log("Data fetched and processed. Initializing app...");
+  // Call other functions or perform tasks that require the data
+  getProducts();
 }
 
 //! Get A user from the users
@@ -100,6 +107,10 @@ export function getSellers() {
   return sellersData;
 }
 
+export function getProducts() {
+  console.log(productsData);
+  return productsData;
+}
 //! Save Data
 function saveDataToDB() {
   const data = {
@@ -121,7 +132,4 @@ function saveDataToDB() {
     .catch((error) => {
       console.error("Error saving data:", error);
     });
-}
-export function getProducts() {
-  return productsData;
 }
