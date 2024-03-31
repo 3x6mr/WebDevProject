@@ -1,46 +1,33 @@
-let users = [];
 let customersData = [];
 let sellersData = [];
 let productsData = [];
+let users = [];
 
-//! Fetching Data
-fetch("../javascript/db.json")
-  .then((response) => response.json())
-  .then((data) => {
-    processData(data);
-    // Call other functions that depend on the data
-    initializeApp();
-  })
-  .catch((error) => {
-    console.error("Error fetching data:", error);
-  });
-
-//! Get the data from the database
-function processData(data) {
+async function fetchData() {
+  const response = await fetch("../javascript/db.json");
+  const data = await response.json();
   customersData = data.customers;
   sellersData = data.sellers;
   productsData = data.products;
   users = [...customersData, ...sellersData];
 }
-function initializeApp() {
-  console.log("Data fetched and processed. Initializing app...");
-  // Call other functions or perform tasks that require the data
-  getProducts();
-}
 
-//! Get A user from the users
-export function getUser(username) {
+// Call fetchData once at the beginning to fetch the data
+fetchData();
+
+async function getUser(username) {
+  await fetchData();
   return users.find((user) => user.username === username);
 }
 
-//! Get A product from the products
-export function getProduct(productname) {
+async function getProduct(productname) {
+  await fetchData();
   return productsData.find((product) => product.name === productname);
 }
 
-//! Add a new Product to the Products
-export function addProduct(product, sellerUser) {
-  const seller = getUser(sellerUser);
+async function addProduct(product, sellerUser) {
+  await fetchData();
+  const seller = await getUser(sellerUser);
   const newProduct = {
     name: product.name,
     description: product.description,
@@ -50,86 +37,101 @@ export function addProduct(product, sellerUser) {
     image: product.image,
   };
   productsData.push(newProduct);
-  saveDataToDB();
+  await saveDataToDB();
 }
 
-//! Remove existing product
-export function removeProduct(productname) {
+async function removeProduct(productname) {
+  await fetchData();
   const productIndex = productsData.findIndex(
     (product) => product.name === productname
   );
   productsData.splice(productIndex, 1);
-  saveDataToDB();
+  await saveDataToDB();
 }
 
-//! Reduce the quantity of a product
-export function reduceQuantity(productname, quantity) {
+async function reduceQuantity(productname, quantity) {
+  await fetchData();
   const product = productsData.find((product) => product.name === productname);
   if (product) {
     product.quantity -= quantity;
-    saveDataToDB();
+    await saveDataToDB();
   }
 }
 
-//! Increase the quantity of a product
-export function increaseQuantity(productname, quantity) {
+async function increaseQuantity(productname, quantity) {
+  await fetchData();
   const product = productsData.find((product) => product.name === productname);
   if (product) {
     product.quantity += quantity;
-    saveDataToDB();
+    await saveDataToDB();
   }
 }
 
-//! Remove a user from the users
-export function removeUser(username) {
+async function removeUser(username) {
+  await fetchData();
   const userIndex = users.findIndex((user) => user.username === username);
   if (userIndex !== -1) {
     users.splice(userIndex, 1);
-    saveDataToDB();
+    await saveDataToDB();
   }
 }
 
-//! Add a user to the users list
-export function addUser(user) {
+async function addUser(user) {
+  await fetchData();
   users.push(user);
-  saveDataToDB();
+  await saveDataToDB();
 }
 
-//! Login validation
-export function login(username, password) {
+async function login(username, password) {
+  await fetchData();
   return users.find(
     (user) => user.username === username && user.password === password
   );
 }
 
-//! Get the Sellers
-export function getSellers() {
+async function getSellers() {
+  await fetchData();
   return sellersData;
 }
 
-export function getProducts() {
+async function getProducts() {
+  await fetchData();
   console.log(productsData);
   return productsData;
 }
-//! Save Data
-function saveDataToDB() {
+
+async function saveDataToDB() {
   const data = {
     customers: customersData,
     sellers: sellersData,
     products: productsData,
   };
-  fetch("/update", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((result) => {
-      console.log("Data saved successfully:", result);
-    })
-    .catch((error) => {
-      console.error("Error saving data:", error);
+  try {
+    const response = await fetch("/update", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     });
+    const result = await response.json();
+    console.log("Data saved successfully:", result);
+  } catch (error) {
+    console.error("Error saving data:", error);
+  }
 }
+
+export {
+  getUser,
+  getProduct,
+  addProduct,
+  removeProduct,
+  reduceQuantity,
+  increaseQuantity,
+  removeUser,
+  addUser,
+  login,
+  getSellers,
+  getProducts,
+  saveDataToDB,
+};

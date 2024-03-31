@@ -1,23 +1,32 @@
 import { getProducts } from "./module.js";
-const sectionType = localStorage.getItem("section");
-const container = document.querySelector(".container");
-const products = getProducts();
-products
-  .filter((product) => {
-    return product.section === sectionType;
-  })
-  .forEach(function (product) {
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.innerHTML = `
-    <img src="../images/${product.img}" alt="${product.name}">
-        <div class="info">
+
+async function displayProducts() {
+  const sectionType = localStorage.getItem("section");
+  const container = document.querySelector(".container");
+
+  try {
+    const products = await getProducts();
+    console.log(products);
+
+    products
+      .filter((product) => product.section === sectionType)
+      .forEach(function (product) {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.innerHTML = `
+          <img src="../images/${product.img}" alt="${product.name}">
+          <div class="info">
             <div class="name">Name: ${product.name}</div>
-            <div class="price">price: ${product.price}$</div>
-        </div>
-        `;
-    container.appendChild(card);
-  });
+            <div class="price">Price: ${product.price}$</div>
+          </div>`;
+        container.appendChild(card);
+      });
+  } catch (error) {
+    console.error("Error fetching products:", error);
+  }
+}
+
+displayProducts();
 
 // const searchInput = document.getElementById("searchInput").value.toLowerCase();
 // fetch("../javascript/db.json")
