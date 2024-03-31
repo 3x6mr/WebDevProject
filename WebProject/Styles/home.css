@@ -266,7 +266,7 @@ main {
 
 /* END MAIN  */
 footer {
-  padding: 2rem;
+  padding-top: 2rem;
   color: white;
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -274,4 +274,42 @@ footer {
     rgba(0, 0, 0, 1) 44%,
     rgba(112, 0, 0, 1) 100%
   );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 3rem;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 3rem;
+    align-items: center;
+    a {
+      font-size: 1rem;
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        color: rgb(114, 0, 0);
+      }
+    }
+  }
+  .text {
+    display: flex;
+    justify-content: center;
+  }
 }
