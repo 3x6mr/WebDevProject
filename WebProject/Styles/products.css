@@ -95,15 +95,21 @@ header {
       border-radius: 10px;
       /* border: 5px solid rgb(140, 140, 140); */
       background: rgb(244, 244, 244);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
+      display: grid;
+      grid-template-rows: 3fr 1fr 1fr;
+      /* gap: 1rem; */
+      justify-content: center;
+      /* align-items: center; */
       color: black;
       transition: all ease-in-out 0.2s;
       &:hover {
-        box-shadow: 0px 0px 10px rgb(0, 0, 0);
+        box-shadow: 0px 0px 10px rgb(185, 185, 185);
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
       img {
         width: 100%;
@@ -121,9 +127,10 @@ header {
 }
 .found-item {
   position: absolute;
-  padding: 10px 40%;
+  padding: 10px 30%;
   width: 100%;
   top: 70px;
+
   /* background: rgb(183, 183, 183); */
 
   .item {
@@ -132,8 +139,9 @@ header {
     border-radius: 10px;
     padding: 1rem;
     display: flex;
-    justify-content: start;
-    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
     cursor: pointer;
     transition: all ease-in-out 0.2s;
     border-bottom: 1px solid gray;
@@ -149,5 +157,65 @@ header {
     .info {
       color: black;
     }
+  }
+}
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all ease-in-out 0.2s;
+  font-family: "Erode", serif;
+  &:hover {
+    background: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+}
+footer {
+  padding-top: 2rem;
+  color: white;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 1) 44%,
+    rgba(112, 0, 0, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 3rem;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 3rem;
+    align-items: center;
+    a {
+      font-size: 1rem;
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        color: rgb(114, 0, 0);
+      }
+    }
+  }
+  .text {
+    display: flex;
+    justify-content: center;
   }
 }

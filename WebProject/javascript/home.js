@@ -25,29 +25,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const classic = document.querySelector(".classic");
 
   mountain.addEventListener("click", function (e) {
-    if (!isLoggedIn) {
-      window.location.href = "../Pages/login.html";
-    } else {
-      localStorage.setItem("section", "mountain");
-      window.location.href = "../Pages/products.html";
-    }
+    localStorage.setItem("section", "mountain");
+    window.location.href = "../Pages/products.html";
   });
   speed.addEventListener("click", function (e) {
-    if (!isLoggedIn) {
-      window.location.href = "../Pages/login.html";
-    } else {
-      localStorage.setItem("section", "speed");
-      window.location.href = "../Pages/products.html";
-    }
+    localStorage.setItem("section", "speed");
+    window.location.href = "../Pages/products.html";
+
     console.log("speed clicked");
   });
   classic.addEventListener("click", function (e) {
-    if (!isLoggedIn) {
-      window.location.href = "../Pages/login.html";
-    } else {
-      localStorage.setItem("section", "classic");
-      window.location.href = "../Pages/products.html";
-    }
+    localStorage.setItem("section", "classic");
+    window.location.href = "../Pages/products.html";
+
     console.log("classic clicked");
   });
 });
