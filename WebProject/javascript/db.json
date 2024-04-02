@@ -4,13 +4,15 @@
       "username": "customer1",
       "password": "password1",
       "email": "customer1@example.com",
-      "balance": 1000
+      "balance": 1000,
+      "history": []
     },
     {
       "username": "customer2",
       "password": "password2",
       "email": "customer2@example.com",
-      "balance": 2000
+      "balance": 2000,
+      "history": []
     }
   ],
   "sellers": [
@@ -18,19 +20,22 @@
       "username": "seller1",
       "password": "password1",
       "email": "seller1@example.com",
-      "bank": 1000
+      "bank": 1000,
+      "history": []
     },
     {
       "username": "seller2",
       "password": "password2",
       "email": "seller2@example.com",
-      "bank": 2000
+      "bank": 2000,
+      "history": []
     },
     {
       "username": "seller3",
       "password": "password3",
       "email": "seller3@example.com",
-      "bank": 3000
+      "bank": 3000,
+      "history": []
     }
   ],
   "products": [

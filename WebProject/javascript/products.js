@@ -1,14 +1,14 @@
 import { getProducts } from "./module.js";
 
+const isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+
 document.addEventListener("DOMContentLoaded", async () => {
   const sectionType = localStorage.getItem("section");
-
   try {
     const container = document.querySelector(".container");
     const foundItem = document.querySelector(".found-item");
     const products = await getProducts();
     console.log(products);
-
     products
       .filter((product) => product.section === sectionType)
       .forEach(function (product) {
@@ -25,11 +25,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         buyBtn.innerHTML = "BUY";
         card.appendChild(buyBtn);
         container.appendChild(card);
-
         buyBtn.addEventListener("click", function (e) {
           e.preventDefault();
-          localStorage.setItem("product", JSON.stringify(product));
-          window.location.href = "checkout.html";
+          if (!isLoggedIn) {
+            // localStorage.setItem("isLoggedIn");
+            window.location.href = "../Pages/login.html";
+          } else {
+            localStorage.setItem("product", JSON.stringify(product));
+            window.location.href = "checkout.html";
+          }
         });
       });
     const searchIcon = document.querySelector(".icon-tabler-search");
@@ -61,6 +65,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             buyBtn.innerHTML = "BUY";
             item.appendChild(buyBtn);
             foundItem.appendChild(item);
+            buyBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              if (!isLoggedIn) {
+                // localStorage.setItem("isLoggedIn");
+                window.location.href = "../Pages/login.html";
+              } else {
+                localStorage.setItem("product", JSON.stringify(product));
+                window.location.href = "checkout.html";
+              }
+            });
           });
         }
       }
